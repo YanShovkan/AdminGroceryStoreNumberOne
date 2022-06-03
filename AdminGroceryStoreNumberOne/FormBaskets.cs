@@ -37,7 +37,8 @@ namespace AdminGroceryStoreNumberOne
                         id = basket.id,
                         date = new DateTime(1970,1,1).AddMilliseconds(basket.date).AddHours(4).ToString("dd/MM/yyyy HH:mm:ss"),
                         totalPrice = Math.Round(basket.totalPrice, 2),
-                        userName = listUsers.FirstOrDefault(user => user.id.Equals(basket.userId)).login
+                        userName = listUsers.FirstOrDefault(user => user.id.Equals(basket.userId)).login,
+                        adress = basket.adress
                     });
                 }
 

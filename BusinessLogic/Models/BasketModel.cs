@@ -13,5 +13,6 @@ namespace BusinessLogic.Models
         public long date { get; set; }
         public decimal totalPrice { get; set; }
         public string userId { get; set; }
+        public string adress { get; set; }
     }
 }

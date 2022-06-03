@@ -16,5 +16,7 @@ namespace BusinessLogic.Models
         public decimal totalPrice { get; set; }
         [DisplayName("Пользователь")]
         public string userName { get; set; }
+        [DisplayName("Место сборки")]
+        public string adress { get; set; }
     }
 }

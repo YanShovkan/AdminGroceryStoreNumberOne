@@ -77,9 +77,9 @@ namespace AdminGroceryStoreNumberOne
             // 
             // textBoxAdress
             // 
-            this.textBoxAdress.Location = new System.Drawing.Point(60, 64);
+            this.textBoxAdress.Location = new System.Drawing.Point(72, 64);
             this.textBoxAdress.Name = "textBoxAdress";
-            this.textBoxAdress.Size = new System.Drawing.Size(193, 20);
+            this.textBoxAdress.Size = new System.Drawing.Size(181, 20);
             this.textBoxAdress.TabIndex = 3;
             // 
             // textBoxLongitude
@@ -91,9 +91,9 @@ namespace AdminGroceryStoreNumberOne
             // 
             // textBoxLatitude
             // 
-            this.textBoxLatitude.Location = new System.Drawing.Point(66, 12);
+            this.textBoxLatitude.Location = new System.Drawing.Point(72, 12);
             this.textBoxLatitude.Name = "textBoxLatitude";
-            this.textBoxLatitude.Size = new System.Drawing.Size(187, 20);
+            this.textBoxLatitude.Size = new System.Drawing.Size(181, 20);
             this.textBoxLatitude.TabIndex = 5;
             // 
             // FormShop

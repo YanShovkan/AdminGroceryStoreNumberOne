@@ -19,7 +19,8 @@ namespace BusinessLogic.Logic
                 id = item.Key,
                 date = item.Object.date,
                 totalPrice = item.Object.totalPrice,
-                userId = item.Object.userId
+                userId = item.Object.userId,
+                adress = item.Object.adress                
             }).ToList();
         }
     }

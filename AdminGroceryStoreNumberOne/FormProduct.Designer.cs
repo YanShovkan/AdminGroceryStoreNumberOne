@@ -40,9 +40,9 @@ namespace AdminGroceryStoreNumberOne
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(78, 13);
+            this.textBoxName.Location = new System.Drawing.Point(84, 13);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(175, 20);
+            this.textBoxName.Size = new System.Drawing.Size(169, 20);
             this.textBoxName.TabIndex = 0;
             // 
             // textBoxPrice
@@ -54,9 +54,9 @@ namespace AdminGroceryStoreNumberOne
             // 
             // textBoxDiscount
             // 
-            this.textBoxDiscount.Location = new System.Drawing.Point(66, 65);
+            this.textBoxDiscount.Location = new System.Drawing.Point(84, 65);
             this.textBoxDiscount.Name = "textBoxDiscount";
-            this.textBoxDiscount.Size = new System.Drawing.Size(187, 20);
+            this.textBoxDiscount.Size = new System.Drawing.Size(169, 20);
             this.textBoxDiscount.TabIndex = 0;
             // 
             // labelName
