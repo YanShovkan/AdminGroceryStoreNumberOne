@@ -46,5 +46,17 @@ namespace AdminGroceryStoreNumberOne
                 Close();
             }
         }
+
+        private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = new FormUsers();
+            form.ShowDialog();
+        }
+
+        private void отчётToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = new FormReport(user);
+            form.ShowDialog();
+        }
     }
 }

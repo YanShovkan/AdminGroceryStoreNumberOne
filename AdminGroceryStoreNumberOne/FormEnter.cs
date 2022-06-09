@@ -45,5 +45,13 @@ namespace AdminGroceryStoreNumberOne
                     MessageBoxIcon.Error);
             }
         }
+
+        private void linkLabelPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form form = new FormPasswordRecovery();
+            Hide();
+            form.ShowDialog();
+            Show();
+        }
     }
 }

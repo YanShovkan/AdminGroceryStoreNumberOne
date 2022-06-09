@@ -30,6 +30,39 @@ namespace BusinessLogic.Logic
             return allUsers.FirstOrDefault(m => m.login == login);
         }
 
+        public async Task<List<CustomerModel>> GetCustomers()
+        {
+            List<UserModel> allUsers = await GetAllUsers();
+            allUsers = allUsers.Where(m => m.status.Equals("user")).ToList();
+
+            CardLogic cardLogic = new CardLogic();
+            List<CardModel> cards = await cardLogic.GetAllCards();
+
+            List<CustomerModel> customers = new List<CustomerModel>();
+
+            foreach (UserModel user in allUsers)
+            {
+                CardModel card = cards.FirstOrDefault(m => m.userId.Equals(user.id));
+                CustomerModel customer = new CustomerModel
+                {
+                    id = user.id,
+                    userLogin = user.login,
+                };
+
+                if (card != null)
+                {
+                    customer.cardDiscount = $"{card.discount} %";
+                }
+                else
+                {
+                    customer.cardDiscount = "Пользователь не имеет карты лояльности";
+                }
+                customers.Add(customer);
+                
+            }
+
+            return customers;
+        }
 
         public async Task AddUser(string login, string password, string status)
         {
@@ -51,7 +84,7 @@ namespace BusinessLogic.Logic
         {
             UserModel admin = await GetUser(login);
 
-            if(admin == null)
+            if (admin == null)
             {
                 throw new Exception("Неверный логин!");
             }

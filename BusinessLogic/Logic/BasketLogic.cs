@@ -20,8 +20,23 @@ namespace BusinessLogic.Logic
                 date = item.Object.date,
                 totalPrice = item.Object.totalPrice,
                 userId = item.Object.userId,
-                adress = item.Object.adress                
+                adress = item.Object.adress
             }).ToList();
+        }
+
+        public async Task<List<BasketModel>> GetAllBasketsByUserId(string userId)
+        {
+            List<BasketModel> allBaskets = await GetAllBaskets();
+            return allBaskets.Where(m => m.userId == userId).ToList();
+
+        }
+        public async Task<List<BasketModel>> GetAllBasketsByDate(DateTime dateForm, DateTime dateTo)
+        {
+            List<BasketModel> allBaskets = await GetAllBaskets();
+            return allBaskets
+                .Where(m => new DateTime(1970, 1, 1).AddMilliseconds(m.date).AddHours(4) >= dateForm &&
+                             new DateTime(1970, 1, 1).AddMilliseconds(m.date).AddHours(4) <= dateTo)
+                .ToList();
         }
     }
 }

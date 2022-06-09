@@ -35,6 +35,7 @@ namespace AdminGroceryStoreNumberOne
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonEnter = new System.Windows.Forms.Button();
             this.buttonRegister = new System.Windows.Forms.Button();
+            this.linkLabelPassword = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // labelLogin
@@ -72,7 +73,7 @@ namespace AdminGroceryStoreNumberOne
             // 
             // buttonEnter
             // 
-            this.buttonEnter.Location = new System.Drawing.Point(13, 68);
+            this.buttonEnter.Location = new System.Drawing.Point(13, 79);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(220, 23);
             this.buttonEnter.TabIndex = 2;
@@ -82,7 +83,7 @@ namespace AdminGroceryStoreNumberOne
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(13, 97);
+            this.buttonRegister.Location = new System.Drawing.Point(13, 111);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(220, 23);
             this.buttonRegister.TabIndex = 2;
@@ -90,11 +91,25 @@ namespace AdminGroceryStoreNumberOne
             this.buttonRegister.UseVisualStyleBackColor = true;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
+            // linkLabelPassword
+            // 
+            this.linkLabelPassword.AutoSize = true;
+            this.linkLabelPassword.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabelPassword.Location = new System.Drawing.Point(142, 63);
+            this.linkLabelPassword.Name = "linkLabelPassword";
+            this.linkLabelPassword.Size = new System.Drawing.Size(91, 13);
+            this.linkLabelPassword.TabIndex = 3;
+            this.linkLabelPassword.TabStop = true;
+            this.linkLabelPassword.Text = "Забыли пароль?";
+            this.linkLabelPassword.VisitedLinkColor = System.Drawing.Color.Black;
+            this.linkLabelPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelPassword_LinkClicked);
+            // 
             // FormEnter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(242, 126);
+            this.ClientSize = new System.Drawing.Size(242, 146);
+            this.Controls.Add(this.linkLabelPassword);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.textBoxPassword);
@@ -116,6 +131,7 @@ namespace AdminGroceryStoreNumberOne
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonEnter;
         private System.Windows.Forms.Button buttonRegister;
+        private System.Windows.Forms.LinkLabel linkLabelPassword;
     }
 }
 

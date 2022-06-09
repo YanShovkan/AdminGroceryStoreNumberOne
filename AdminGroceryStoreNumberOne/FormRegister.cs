@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,9 +23,9 @@ namespace AdminGroceryStoreNumberOne
 
         private async void buttonRegister_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxLogin.Text))
+            if (!Regex.IsMatch(textBoxLogin.Text, @"^[A-Za-z0-9]+(?:[._%+-])?[A-Za-z0-9._-]+[A-Za-z0-9]@[A-Za-z0-9]+(?:[.-])?[A-Za-z0-9._-]+\.[A-Za-z]{2,6}$"))
             {
-                MessageBox.Show("Введите логин", "Ошибка", MessageBoxButtons.OK,
+                MessageBox.Show("Логин должен быть e-mail адресом", "Ошибка", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }

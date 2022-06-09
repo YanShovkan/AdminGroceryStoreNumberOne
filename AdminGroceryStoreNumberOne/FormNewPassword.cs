@@ -12,19 +12,24 @@ using System.Windows.Forms;
 
 namespace AdminGroceryStoreNumberOne
 {
-    public partial class FormProfile : Form
+    public partial class FormNewPassword : Form
     {
         UserLogic userLogic = new UserLogic();
         UserModel user;
-        public FormProfile(UserModel user)
+        public FormNewPassword(UserModel user)
         {
             this.user = user;
             InitializeComponent();
         }
 
-        private async void buttonChangePassword_Click(object sender, EventArgs e)
+        private async void buttonCreateNewPassword_Click(object sender, EventArgs e)
         {
-     
+            if (!textBoxPassword.Text.Equals(textBoxPasswordAgain.Text))
+            {
+                MessageBox.Show("Пароли должны совпадать", "Ошибка", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
             if (textBoxPassword.Text.Length <= 3)
             {
                 MessageBox.Show("Пароль должен содержать больше 3 символов", "Ошибка", MessageBoxButtons.OK,
@@ -46,12 +51,6 @@ namespace AdminGroceryStoreNumberOne
                     MessageBoxIcon.Error);
             }
         }
-
-        private void buttonDelete_Click(object sender, EventArgs e)
-        {
-            userLogic.DeleteUser(user.id);
-            DialogResult = DialogResult.Abort;
-            Close();
-        }
     }
 }
+
