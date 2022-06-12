@@ -226,142 +226,169 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormBasket.cs">
+    <Compile Include="Forms\FormAddTablePart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBasket.Designer.cs">
+    <Compile Include="Forms\FormAddTablePart.Designer.cs">
+      <DependentUpon>FormAddTablePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAdmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAdmission.Designer.cs">
+      <DependentUpon>FormAdmission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAdmissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAdmissions.Designer.cs">
+      <DependentUpon>FormAdmissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormBasket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormBasket.Designer.cs">
       <DependentUpon>FormBasket.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBaskets.cs">
+    <Compile Include="Forms\FormBaskets.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBaskets.Designer.cs">
+    <Compile Include="Forms\FormBaskets.Designer.cs">
       <DependentUpon>FormBaskets.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDiagram.cs">
+    <Compile Include="Forms\FormDiagram.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDiagram.Designer.cs">
+    <Compile Include="Forms\FormDiagram.Designer.cs">
       <DependentUpon>FormDiagram.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEnter.cs">
+    <Compile Include="Forms\FormEnter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEnter.Designer.cs">
+    <Compile Include="Forms\FormEnter.Designer.cs">
       <DependentUpon>FormEnter.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs">
+    <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
+    <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormNewPassword.cs">
+    <Compile Include="Forms\FormNewPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormNewPassword.Designer.cs">
+    <Compile Include="Forms\FormNewPassword.Designer.cs">
       <DependentUpon>FormNewPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPasswordRecovery.cs">
+    <Compile Include="Forms\FormPasswordRecovery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPasswordRecovery.Designer.cs">
+    <Compile Include="Forms\FormPasswordRecovery.Designer.cs">
       <DependentUpon>FormPasswordRecovery.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProduct.cs">
+    <Compile Include="Forms\FormProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProduct.Designer.cs">
+    <Compile Include="Forms\FormProduct.Designer.cs">
       <DependentUpon>FormProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProducts.cs">
+    <Compile Include="Forms\FormProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProducts.Designer.cs">
+    <Compile Include="Forms\FormProducts.Designer.cs">
       <DependentUpon>FormProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProfile.cs">
+    <Compile Include="Forms\FormProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProfile.Designer.cs">
+    <Compile Include="Forms\FormProfile.Designer.cs">
       <DependentUpon>FormProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRegister.cs">
+    <Compile Include="Forms\FormRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegister.Designer.cs">
+    <Compile Include="Forms\FormRegister.Designer.cs">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReport.cs">
+    <Compile Include="Forms\FormReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReport.Designer.cs">
+    <Compile Include="Forms\FormReport.Designer.cs">
       <DependentUpon>FormReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormShop.cs">
+    <Compile Include="Forms\FormShop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormShop.Designer.cs">
+    <Compile Include="Forms\FormShop.Designer.cs">
       <DependentUpon>FormShop.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormShops.cs">
+    <Compile Include="Forms\FormShops.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormShops.Designer.cs">
+    <Compile Include="Forms\FormShops.Designer.cs">
       <DependentUpon>FormShops.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUsers.cs">
+    <Compile Include="Forms\FormUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUsers.Designer.cs">
+    <Compile Include="Forms\FormUsers.Designer.cs">
       <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="FormBasket.resx">
+    <EmbeddedResource Include="Forms\FormAddTablePart.resx">
+      <DependentUpon>FormAddTablePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAdmission.resx">
+      <DependentUpon>FormAdmission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAdmissions.resx">
+      <DependentUpon>FormAdmissions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormBasket.resx">
       <DependentUpon>FormBasket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBaskets.resx">
+    <EmbeddedResource Include="Forms\FormBaskets.resx">
       <DependentUpon>FormBaskets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDiagram.resx">
+    <EmbeddedResource Include="Forms\FormDiagram.resx">
       <DependentUpon>FormDiagram.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEnter.resx">
+    <EmbeddedResource Include="Forms\FormEnter.resx">
       <DependentUpon>FormEnter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormNewPassword.resx">
+    <EmbeddedResource Include="Forms\FormNewPassword.resx">
       <DependentUpon>FormNewPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPasswordRecovery.resx">
+    <EmbeddedResource Include="Forms\FormPasswordRecovery.resx">
       <DependentUpon>FormPasswordRecovery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProduct.resx">
+    <EmbeddedResource Include="Forms\FormProduct.resx">
       <DependentUpon>FormProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProducts.resx">
+    <EmbeddedResource Include="Forms\FormProducts.resx">
       <DependentUpon>FormProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProfile.resx">
+    <EmbeddedResource Include="Forms\FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegister.resx">
+    <EmbeddedResource Include="Forms\FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReport.resx">
+    <EmbeddedResource Include="Forms\FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormShop.resx">
+    <EmbeddedResource Include="Forms\FormShop.resx">
       <DependentUpon>FormShop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormShops.resx">
+    <EmbeddedResource Include="Forms\FormShops.resx">
       <DependentUpon>FormShops.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUsers.resx">
+    <EmbeddedResource Include="Forms\FormUsers.resx">
       <DependentUpon>FormUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

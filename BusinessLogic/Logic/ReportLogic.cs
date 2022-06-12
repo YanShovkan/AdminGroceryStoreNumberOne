@@ -1,4 +1,5 @@
-﻿using BusinessLogic.Models;
+﻿using BusinessLogic.DataGridModels;
+using BusinessLogic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
