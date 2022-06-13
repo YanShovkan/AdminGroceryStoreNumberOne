@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.DataGridModels
 {
-    public class CustomerModel
+    public class UserDataGridModel
     {
         public string id { get; set; }
         [DisplayName("Покупатель")]

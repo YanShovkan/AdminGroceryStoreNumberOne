@@ -274,6 +274,12 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormMovementOfGoodsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMovementOfGoodsReport.Designer.cs">
+      <DependentUpon>FormMovementOfGoodsReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormNewPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,6 +367,9 @@
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMovementOfGoodsReport.resx">
+      <DependentUpon>FormMovementOfGoodsReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormNewPassword.resx">
       <DependentUpon>FormNewPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,6 +400,7 @@
     <EmbeddedResource Include="Forms\FormUsers.resx">
       <DependentUpon>FormUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MovementOfGoodsReport.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -403,6 +413,7 @@
     <EmbeddedResource Include="Report.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BusinessLogic.Models.ReportModel.datasource" />
+    <None Include="Properties\DataSources\BusinessLogic.Models.ReportMovementOfGoodsModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

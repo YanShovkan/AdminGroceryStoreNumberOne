@@ -24,27 +24,17 @@ namespace BusinessLogic.Logic
             }).ToList();
         }
 
-        public async Task<List<MovementOfGoodModel>> GetMovementOfGoodsByDate(DateTime dateForm, DateTime dateTo)
+        public async Task<List<MovementOfGoodsDataGridModel>> GetMovementOfGoodsForReport()
         {
             List<MovementOfGoodModel> allMovementOfGoods = await GetAllMovementOfGoods();
-            return allMovementOfGoods
-                .Where(m => new DateTime(Convert.ToInt32(m.date.Split('.')[2]), Convert.ToInt32(m.date.Split('.')[1]), Convert.ToInt32(m.date.Split('.')[0])) >= dateForm &&
-                             new DateTime(Convert.ToInt32(m.date.Split('.')[2]), Convert.ToInt32(m.date.Split('.')[1]), Convert.ToInt32(m.date.Split('.')[0])) <= dateTo)
-                .ToList();
-        }
-
-        public async Task<List<MovementOfGoodsModel>> GetAdmissions()
-        {
-            List<MovementOfGoodModel> allMovementOfGoods = await GetAllMovementOfGoods();
-            allMovementOfGoods = allMovementOfGoods.Where(m => m.type.Equals("поступление")).ToList();
 
             TablePartLogic tablePartLogic = new TablePartLogic();
 
-            List<MovementOfGoodsModel> addmissions = new List<MovementOfGoodsModel>();
+            List<MovementOfGoodsDataGridModel> addmissions = new List<MovementOfGoodsDataGridModel>();
 
             foreach (MovementOfGoodModel movementOfGood in allMovementOfGoods)
             {
-                addmissions.Add(new MovementOfGoodsModel
+                addmissions.Add(new MovementOfGoodsDataGridModel
                 {
                     id = movementOfGood.id,
                     date = movementOfGood.date,
@@ -56,16 +46,39 @@ namespace BusinessLogic.Logic
             return addmissions;
         }
 
-        public async Task<MovementOfGoodsModel> GetAdmissionById(string id)
+        public async Task<List<MovementOfGoodsDataGridModel>> GetAdmissions()
+        {
+            List<MovementOfGoodModel> allMovementOfGoods = await GetAllMovementOfGoods();
+            allMovementOfGoods = allMovementOfGoods.Where(m => m.type.Equals("поступление")).ToList();
+
+            TablePartLogic tablePartLogic = new TablePartLogic();
+
+            List<MovementOfGoodsDataGridModel> addmissions = new List<MovementOfGoodsDataGridModel>();
+
+            foreach (MovementOfGoodModel movementOfGood in allMovementOfGoods)
+            {
+                addmissions.Add(new MovementOfGoodsDataGridModel
+                {
+                    id = movementOfGood.id,
+                    date = movementOfGood.date,
+                    type = movementOfGood.type,
+                    tableParts = await tablePartLogic.GetTablePartsByMovmentOfGoodId(movementOfGood.id)
+                });
+            }
+
+            return addmissions;
+        }
+
+        public async Task<MovementOfGoodsDataGridModel> GetAdmissionById(string id)
         {
             List<MovementOfGoodModel> allMovementOfGoods = await GetAllMovementOfGoods();
             MovementOfGoodModel movementOfGood = allMovementOfGoods.FirstOrDefault(m => m.id.Equals(id));
 
             TablePartLogic tablePartLogic = new TablePartLogic();
 
-            List<MovementOfGoodsModel> addmissions = new List<MovementOfGoodsModel>();
+            List<MovementOfGoodsDataGridModel> addmissions = new List<MovementOfGoodsDataGridModel>();
 
-            MovementOfGoodsModel admission = new MovementOfGoodsModel
+            MovementOfGoodsDataGridModel admission = new MovementOfGoodsDataGridModel
             {
                 id = movementOfGood.id,
                 date = movementOfGood.date,
@@ -76,9 +89,9 @@ namespace BusinessLogic.Logic
             return admission;
         }
 
-        public async Task<MovementOfGoodsModel> GetEmptyAdmission()
+        public async Task<MovementOfGoodsDataGridModel> GetEmptyAdmission()
         {
-            List<MovementOfGoodsModel> allAdmissions = await GetAdmissions();
+            List<MovementOfGoodsDataGridModel> allAdmissions = await GetAdmissions();
             return allAdmissions.FirstOrDefault(m => m.tableParts.Count == 0);
         }
 
@@ -94,7 +107,7 @@ namespace BusinessLogic.Logic
         public async Task DeleteAdmission(string id)
         {
             TablePartLogic tablePartLogic = new TablePartLogic();
-            MovementOfGoodsModel admission = await GetAdmissionById(id);
+            MovementOfGoodsDataGridModel admission = await GetAdmissionById(id);
 
             await firebase.Child("MovementOfGoods/" + id).DeleteAsync();
 

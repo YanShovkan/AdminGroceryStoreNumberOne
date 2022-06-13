@@ -28,13 +28,13 @@ namespace AdminGroceryStoreNumberOne.Forms
             try
             {
                 List<BasketProductModel> list = await basketProductLogic.GetFiltredBasketProducts(basketId);
-                List<BasketProductViewModel> viewList = new List<BasketProductViewModel>();
+                List<BasketProductDataGridModel> viewList = new List<BasketProductDataGridModel>();
                 List<ProductModel> listProducts = await productLogic.GetAllProducts();
 
                 int index = 0;
                 foreach (BasketProductModel basketProduct in list)
                 {
-                    viewList.Add(new BasketProductViewModel
+                    viewList.Add(new BasketProductDataGridModel
                     {
                         id = basketProduct.id,
                         productName = listProducts.FirstOrDefault(product => product.id.Equals(basketProduct.productId)).name,

@@ -123,6 +123,7 @@ namespace AdminGroceryStoreNumberOne.Forms
             this.движениеТоваровНаСкладеToolStripMenuItem.Name = "движениеТоваровНаСкладеToolStripMenuItem";
             this.движениеТоваровНаСкладеToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.движениеТоваровНаСкладеToolStripMenuItem.Text = "Движение товаров на складе";
+            this.движениеТоваровНаСкладеToolStripMenuItem.Click += new System.EventHandler(this.движениеТоваровНаСкладеToolStripMenuItem_Click);
             // 
             // профильToolStripMenuItem
             // 

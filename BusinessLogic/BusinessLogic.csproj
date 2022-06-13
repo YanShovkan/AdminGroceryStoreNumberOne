@@ -202,10 +202,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataGridModels\MovementOfGoodsModel.cs" />
-    <Compile Include="DataGridModels\BasketProductViewModel.cs" />
-    <Compile Include="DataGridModels\BasketViewModel.cs" />
-    <Compile Include="DataGridModels\CustomerModel.cs" />
+    <Compile Include="DataGridModels\MovementOfGoodsDataGridModel.cs" />
+    <Compile Include="DataGridModels\BasketDataGridModel.cs" />
+    <Compile Include="DataGridModels\UserDataGridModel.cs" />
+    <Compile Include="DataGridModels\BasketProductDataGridModel.cs" />
     <Compile Include="Logic\BasketLogic.cs" />
     <Compile Include="Logic\BasketProductLogic.cs" />
     <Compile Include="Logic\CardLogic.cs" />
@@ -224,6 +224,7 @@
     <Compile Include="Models\PdfRowParameters.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\ReportModel.cs" />
+    <Compile Include="Models\ReportMovementOfGoodsModel.cs" />
     <Compile Include="Models\ShopModel.cs" />
     <Compile Include="Models\TablePartModel.cs" />
     <Compile Include="Models\UserModel.cs" />

@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.DataGridModels
 {
-    public class BasketViewModel
+    public class BasketProductDataGridModel
     {
         public string id { get; set; }
-        [DisplayName("Дата")]
-        public string date { get; set; }
+        [DisplayName("Название")]
+        public string productName { get; set; }
+        [DisplayName("Количество")]
+        public int count { get; set; }
         [DisplayName("Стоимость")]
         public decimal totalPrice { get; set; }
-        [DisplayName("Пользователь")]
-        public string userName { get; set; }
-        [DisplayName("Место сборки")]
-        public string adress { get; set; }
     }
 }

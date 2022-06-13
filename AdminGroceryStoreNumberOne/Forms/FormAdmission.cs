@@ -130,7 +130,7 @@ namespace AdminGroceryStoreNumberOne.Forms
                         type = "поступление"
                     });
 
-                    MovementOfGoodsModel admission = await momentOfGoodsLogic.GetEmptyAdmission();
+                    MovementOfGoodsDataGridModel admission = await momentOfGoodsLogic.GetEmptyAdmission();
 
                     foreach(var tablePart in tableParts)
                     {
@@ -188,7 +188,7 @@ namespace AdminGroceryStoreNumberOne.Forms
                 try
                 {
                     
-                    MovementOfGoodsModel view = await momentOfGoodsLogic.GetAdmissionById(id);
+                    MovementOfGoodsDataGridModel view = await momentOfGoodsLogic.GetAdmissionById(id);
 
                     dateTimePicker.Value = new DateTime(Convert.ToInt32(view.date.Split('.')[2]), Convert.ToInt32(view.date.Split('.')[1]), Convert.ToInt32(view.date.Split('.')[0]));
 

@@ -27,7 +27,7 @@ namespace AdminGroceryStoreNumberOne.Forms
         {
             try
             {
-                List<CustomerModel> list = await userLogic.GetCustomers();
+                List<UserDataGridModel> list = await userLogic.GetCustomers();
 
                 if (list != null)
                 {

@@ -44,7 +44,7 @@ namespace AdminGroceryStoreNumberOne.Forms
                     try
                     {
                         List<ReportModel> data = await reportLogic.GetReportModels(dateTimePickerDateFrom.Value.Date, dateTimePickerDateTo.Value.Date);
-                        pdfLogic.CreateDoc(data , dateTimePickerDateFrom.Value.Date, dateTimePickerDateTo.Value.Date, dialog.FileName);
+                        pdfLogic.CreateReportAboutBaskets(data , dateTimePickerDateFrom.Value.Date, dateTimePickerDateTo.Value.Date, dialog.FileName);
                         MessageBox.Show("Файл сохранен успешно!", "Успех", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                     }
@@ -81,7 +81,7 @@ namespace AdminGroceryStoreNumberOne.Forms
             }
         }
 
-        private async void buttonSendMail_Click(object sender, EventArgs e)
+        private void buttonSendMail_Click(object sender, EventArgs e)
         {          
             MailMessage msg = new MailMessage();
             SmtpClient client = new SmtpClient();
@@ -97,10 +97,6 @@ namespace AdminGroceryStoreNumberOne.Forms
                         msg.From = new MailAddress("shovkanyanforlab@mail.ru");
                         msg.To.Add(user.login);
                         msg.IsBodyHtml = true;
-
-                        List<ReportModel> data = await reportLogic.GetReportModels(dateTimePickerDateFrom.Value.Date, dateTimePickerDateTo.Value.Date);
-                        pdfLogic.CreateDoc(data, dateTimePickerDateFrom.Value.Date, dateTimePickerDateTo.Value.Date, dialog.FileName);
-
 
                         Attachment attach = new Attachment(dialog.FileName, MediaTypeNames.Application.Octet);
                         ContentDisposition disposition = attach.ContentDisposition;

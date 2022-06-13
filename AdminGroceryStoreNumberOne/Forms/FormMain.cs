@@ -64,5 +64,11 @@ namespace AdminGroceryStoreNumberOne.Forms
             Form form = new FormReport(user);
             form.ShowDialog();
         }
+
+        private void движениеТоваровНаСкладеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = new FormMovementOfGoodsReport(user);
+            form.ShowDialog();
+        }
     }
 }

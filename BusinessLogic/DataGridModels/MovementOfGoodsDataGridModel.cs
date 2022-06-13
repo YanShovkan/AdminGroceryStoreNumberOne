@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.DataGridModels
 {
-    public class MovementOfGoodsModel
+    public class MovementOfGoodsDataGridModel
     {
         public string id { get; set; }
 

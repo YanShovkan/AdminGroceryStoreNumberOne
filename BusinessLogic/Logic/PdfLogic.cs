@@ -12,7 +12,7 @@ namespace BusinessLogic.Logic
 {
     public class PdfLogic
     {
-        public void CreateDoc(List<ReportModel> data, DateTime dateFrom, DateTime dateTo, string fileName)
+        public void CreateReportAboutBaskets(List<ReportModel> data, DateTime dateFrom, DateTime dateTo, string fileName)
         {
             Document document = new Document();
             DefineStyles(document);
@@ -26,7 +26,7 @@ namespace BusinessLogic.Logic
             paragraph.Format.Alignment = ParagraphAlignment.Center;
             paragraph.Style = "Normal";
             var table = document.LastSection.AddTable();
-            List<string> columns = new List<string> { "4cm", "6cm", "4cm", "3cm"};
+            List<string> columns = new List<string> { "4cm", "6cm", "4cm", "3cm" };
             foreach (var elem in columns)
             {
                 table.AddColumn(elem);
@@ -48,6 +48,56 @@ namespace BusinessLogic.Logic
                         reportModel.adress,
                         reportModel.userLogin,
                         reportModel.totalPrice.ToString()
+                    },
+                    Style = "Normal",
+                    ParagraphAlignment = ParagraphAlignment.Left
+                });
+            }
+            PdfDocumentRenderer renderer = new PdfDocumentRenderer(true, PdfSharp.Pdf.PdfFontEmbedding.Always)
+            {
+                Document = document
+            };
+            renderer.RenderDocument();
+            renderer.PdfDocument.Save(fileName);
+        }
+
+        public void CreateReportAboutMovementOfGoods(List<ReportMovementOfGoodsModel> data, DateTime dateFrom, DateTime dateTo, string fileName)
+        {
+            Document document = new Document();
+            DefineStyles(document);
+            Section section = document.AddSection();
+            Paragraph paragraph = section.AddParagraph("Движение товаров на складе.");
+            paragraph.Format.SpaceAfter = "1cm";
+            paragraph.Format.Alignment = ParagraphAlignment.Center;
+            paragraph.Style = "NormalTitle";
+            paragraph = section.AddParagraph($"В период с {dateFrom.ToShortDateString()} по {dateTo.ToShortDateString()}.");
+            paragraph.Format.SpaceAfter = "1cm";
+            paragraph.Format.Alignment = ParagraphAlignment.Center;
+            paragraph.Style = "Normal";
+            var table = document.LastSection.AddTable();
+            List<string> columns = new List<string> { "4cm", "4cm", "3cm", "3cm", "4cm" };
+            foreach (var elem in columns)
+            {
+                table.AddColumn(elem);
+            }
+            CreateRow(new PdfRowParameters
+            {
+                Table = table,
+                Texts = new List<string> { "Товар", "Остаток на начало периода", "Приход", "Расход", "Остаток на конец периода" },
+                Style = "NormalTitle",
+                ParagraphAlignment = ParagraphAlignment.Center
+            });
+            foreach (ReportMovementOfGoodsModel reportModel in data)
+            {
+                CreateRow(new PdfRowParameters
+                {
+                    Table = table,
+                    Texts = new List<string> {
+                        reportModel.productName,
+                        reportModel.startCount.ToString(),
+                        reportModel.income.ToString(),
+                        reportModel.spending.ToString(),
+                        reportModel.endCount.ToString()
                     },
                     Style = "Normal",
                     ParagraphAlignment = ParagraphAlignment.Left

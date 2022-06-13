@@ -31,7 +31,7 @@ namespace BusinessLogic.Logic
             return allUsers.FirstOrDefault(m => m.login == login);
         }
 
-        public async Task<List<CustomerModel>> GetCustomers()
+        public async Task<List<UserDataGridModel>> GetCustomers()
         {
             List<UserModel> allUsers = await GetAllUsers();
             allUsers = allUsers.Where(m => m.status.Equals("user")).ToList();
@@ -39,12 +39,12 @@ namespace BusinessLogic.Logic
             CardLogic cardLogic = new CardLogic();
             List<CardModel> cards = await cardLogic.GetAllCards();
 
-            List<CustomerModel> customers = new List<CustomerModel>();
+            List<UserDataGridModel> customers = new List<UserDataGridModel>();
 
             foreach (UserModel user in allUsers)
             {
                 CardModel card = cards.FirstOrDefault(m => m.userId.Equals(user.id));
-                CustomerModel customer = new CustomerModel
+                UserDataGridModel customer = new UserDataGridModel
                 {
                     id = user.id,
                     userLogin = user.login,

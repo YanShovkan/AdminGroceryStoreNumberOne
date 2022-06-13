@@ -28,12 +28,12 @@ namespace AdminGroceryStoreNumberOne.Forms
             try
             {
                 List<BasketModel> list = await basketLogic.GetAllBaskets();
-                List<BasketViewModel> viewList = new List<BasketViewModel>();
+                List<BasketDataGridModel> viewList = new List<BasketDataGridModel>();
                 List<UserModel> listUsers = await userLogic.GetAllUsers();
                
                 foreach (BasketModel basket in list)
                 {
-                    viewList.Add(new BasketViewModel
+                    viewList.Add(new BasketDataGridModel
                     {
                         id = basket.id,
                         date = new DateTime(1970,1,1).AddMilliseconds(basket.date).AddHours(4).ToString("dd/MM/yyyy HH:mm:ss"),
