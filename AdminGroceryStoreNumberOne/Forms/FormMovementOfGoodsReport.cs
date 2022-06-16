@@ -112,6 +112,12 @@ namespace AdminGroceryStoreNumberOne.Forms
             }
             try
             {
+                ReportParameter parameter = new ReportParameter("ReportParameterPeriod",
+               "В период с " +
+              dateTimePickerDateFrom.Value.ToShortDateString() +
+               " по " +
+              dateTimePickerDateTo.Value.ToShortDateString());
+                reportViewer.LocalReport.SetParameters(parameter);
                 var dataSource = await reportLogic.GetReportMovementOfGoodsModels(dateTimePickerDateFrom.Value.Date, dateTimePickerDateTo.Value.Date);
                 reportViewer.LocalReport.DataSources.Clear();
                 ReportDataSource source = new ReportDataSource("DataSetMovementOfGoodsReport",
